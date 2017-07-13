@@ -5,7 +5,10 @@ class UserInfo extends React.Component {
     return (
       <div className='user-info-container'>
         <img src={this.props.user.url}/>
-        <h4>{this.props.user.name}</h4>
+        <div className='user-info'>
+          <h4>{this.props.user.name}</h4>
+          <p>{this.props.user.location}</p>
+        </div>
       </div>
     )
   }

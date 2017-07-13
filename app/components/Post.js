@@ -7,6 +7,7 @@ import CommentFeed from './CommentFeed';
 const user = {
   url: 'app/images/profile-picture.jpg',
   name: 'Bob Loblaw',
+  location: 'San Francisco'
 };
 
 const image = {
