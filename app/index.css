@@ -10,6 +10,7 @@ body {
 .post-container {
   padding: 20px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .user-info-container {
@@ -40,4 +41,16 @@ body {
 
 .picture-container img {
   width: 100%;
+}
+
+.like button {
+  background-color: transparent;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.love {
+  color: #BF0000;
 }

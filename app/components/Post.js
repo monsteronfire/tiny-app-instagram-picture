@@ -16,13 +16,29 @@ const image = {
 };
 
 class Post extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      like: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({like: !(this.state.like)});
+    console.log(this.state.like);
+  }
+
   render() {
+    const status = this.state.like ? 'love' : null;
+
     return (
       <div className='post-container'>
         <UserInfo user={user}/>
         <Picture image={image}/>
         <div className='actions'>
-          <Like/>
+          <Like status={status} onClick={this.handleClick}/>
         </div>
         <CommentFeed/>
       </div>
