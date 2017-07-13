@@ -4,7 +4,7 @@ class Picture extends React.Component {
   render() {
     return (
       <div className='picture-container'>
-        Picture
+        <img src={this.props.image.url} alt={this.props.image.alt}/>
       </div>
     )
   }

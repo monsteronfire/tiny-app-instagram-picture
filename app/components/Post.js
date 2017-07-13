@@ -4,12 +4,22 @@ import Picture from './Picture';
 import Like from './Like';
 import CommentFeed from './CommentFeed';
 
+const user = {
+  url: 'app/images/profile-picture.jpg',
+  name: 'Bob Loblaw',
+};
+
+const image = {
+  url: 'app/images/instagram-picture.jpg',
+  alt: 'Beautiful orange bridge in the fog'
+};
+
 class Post extends React.Component {
   render() {
     return (
       <div className='post-container'>
-        <UserInfo/>
-        <Picture/>
+        <UserInfo user={user}/>
+        <Picture image={image}/>
         <div className='actions'>
           <Like/>
         </div>
