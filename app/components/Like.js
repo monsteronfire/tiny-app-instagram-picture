@@ -4,7 +4,7 @@ class Like extends React.Component {
   render() {
     return (
       <div className='like'>
-        Like
+        <button>♥</button>
       </div>
     )
   }
