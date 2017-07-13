@@ -3,6 +3,7 @@ import UserInfo from './UserInfo';
 import Picture from './Picture';
 import Like from './Like';
 import CommentFeed from './CommentFeed';
+import CommentInput from './CommentInput';
 
 const user = {
   url: 'app/images/profile-picture.jpg',
@@ -41,6 +42,7 @@ class Post extends React.Component {
           <Like status={status} onClick={this.handleClick}/>
         </div>
         <CommentFeed/>
+        <CommentInput/>
       </div>
     )
   }
