@@ -5,7 +5,10 @@ class CommentFeed extends React.Component {
     return (
       <section className='comment-feed'>
         {this.props.comments.map((item) => (
-          <article className='comment-item' key={item.id}>{item.text}</article>
+          <article className='comment-item' key={item.id}>
+            <p>Anonymouse user says:</p>
+            <p>{item.text}</p>
+          </article>
         ))}
       </section>
     )
