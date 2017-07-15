@@ -21,6 +21,7 @@ class Post extends React.Component {
     super(props);
     this.state = {
       like: false,
+      comments: ['hey', 'hi', 'hello']
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -41,7 +42,7 @@ class Post extends React.Component {
         <div className='actions'>
           <Like status={status} onClick={this.handleClick}/>
         </div>
-        <CommentFeed/>
+        <CommentFeed comments={this.state.comments}/>
         <CommentInput/>
       </div>
     )
