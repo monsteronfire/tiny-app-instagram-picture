@@ -21,15 +21,33 @@ class Post extends React.Component {
     super(props);
     this.state = {
       like: false,
-      comments: ['hey', 'hi', 'hello']
+      comments: [],
+      text: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(event) {
     this.setState({like: !(this.state.like)});
-    console.log(this.state.like);
+  }
+
+  handleChange(event) {
+    this.setState({text: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    var newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState((prev) => ({
+      comments: prev.comments.concat(newItem),
+      text: ''
+    }));
   }
 
   render() {
@@ -43,7 +61,7 @@ class Post extends React.Component {
           <Like status={status} onClick={this.handleClick}/>
         </div>
         <CommentFeed comments={this.state.comments}/>
-        <CommentInput/>
+        <CommentInput text={this.state.text} onSubmit={this.handleSubmit} onChange={this.handleChange}/>
       </div>
     )
   }

@@ -4,11 +4,9 @@ class CommentFeed extends React.Component {
   render() {
     return (
       <section className='comment-feed'>
-        {this.props.comments.map(function (comment) {
-          return (
-            <article key={comment.id}>{comment}</article>
-          )
-        })}
+        {this.props.comments.map((item) => (
+          <article className='comment-item' key={item.id}>{item.text}</article>
+        ))}
       </section>
     )
   }
